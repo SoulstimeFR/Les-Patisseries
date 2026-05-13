@@ -20,6 +20,14 @@ public class Ouvrier {
         return reponse + "\n";
     }
 
+    public String getNom(){
+        return this.nom;
+    }
+
+    public HashMap<Ressource,Integer> getMateriaux(){
+        return this.materiaux;
+    }
+
     public void ajouterRessource(Ressource ressource, int quantite) {
         this.materiaux.put(ressource, quantite);
     }

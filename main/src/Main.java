@@ -36,5 +36,12 @@ public class Main {
         System.out.print(paul + "\n");
         assert paul.cout() == 3;
         assert paul.quantiteByRessource(pierre) == 2;
+
+        // test chantier
+        Chantier ch1 = new Chantier(maison);
+        ch1.envoyerTravaillerOuvrier(paul);
+
+        System.out.print(ch1 + "\n");
+        System.out.print(ch1.estTermine());
     }
 }
