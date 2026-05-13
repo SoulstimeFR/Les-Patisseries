@@ -22,6 +22,10 @@ public class Batiment {
         return reponse + "\n";
     }
 
+    public HashMap<Ressource,Integer> getMateriaux(){
+        return this.materiaux;
+    }
+
     public void ajouterRessource(Ressource ressource, int quantite) {
         this.materiaux.put(ressource, quantite);
     }

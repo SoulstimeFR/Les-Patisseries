@@ -29,15 +29,22 @@ public class Chantier {
         this.ouvriers.remove(ouvrier);
     }
 
-    public HashMap<Ressource, Integer> estTermine(){ // additionner tout les matériaux des ouvriers dans une hashmap puis comparer avec batiment
+    public boolean estTermine(){ // additionner tout les matériaux des ouvriers dans une hashmap puis comparer avec batiment
         HashMap<Ressource,Integer> totalOuvrier = new HashMap<>();
         for(Ouvrier ouvrier : ouvriers) {
             for (Ressource ressource : ouvrier.getMateriaux().keySet()) {
                 if(!totalOuvrier.containsKey(ressource)) {
                     totalOuvrier.put(ressource, ouvrier.getMateriaux().get(ressource));
+                } else {
+                    totalOuvrier.put(ressource, totalOuvrier.get(ressource)+ouvrier.getMateriaux().get(ressource));
                 }
             }
         }
-        return totalOuvrier;
+        for(Ressource materiau : batiment.getMateriaux().keySet()){
+            if(!(totalOuvrier.get(materiau)>=batiment.getMateriaux().get(materiau))){
+                return false;
+            }
+        }
+        return true;
     }
 }

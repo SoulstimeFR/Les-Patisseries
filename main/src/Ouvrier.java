@@ -29,7 +29,7 @@ public class Ouvrier {
     }
 
     public void ajouterRessource(Ressource ressource, int quantite) {
-        this.materiaux.put(ressource, quantite);
+        this.materiaux.put(ressource, this.materiaux.get(ressource)+quantite);
     }
 
     public int cout(){
